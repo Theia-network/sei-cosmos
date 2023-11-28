@@ -169,14 +169,14 @@ endpoint.
            "memo": "memo",
            "fees": [
                {
-                   "denom": "usei",
+                   "denom": "utheia",
                    "amount": "25000"
                }
            ]
        },
        "amount": [
            {
-               "denom": "usei",
+               "denom": "utheia",
                "amount": "400000000"
            }
        ]
@@ -200,7 +200,7 @@ endpoint.
                "amount": "1000000000"
            },
            {
-               "denom": "usei",
+               "denom": "utheia",
                "amount": "400000000"
            }
        ]

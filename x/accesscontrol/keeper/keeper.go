@@ -556,7 +556,7 @@ func (k Keeper) BuildDependencyDag(ctx sdk.Context, txDecoder sdk.TxDecoder, ant
 //	sei_dag_build_duration_miliseconds_sum
 func MeasureBuildDagDuration(start time.Time, method string) {
 	metrics.MeasureSinceWithLabels(
-		[]string{"sei", "dag", "build", "milliseconds"},
+		[]string{"theia", "dag", "build", "milliseconds"},
 		start.UTC(),
 		[]metrics.Label{telemetry.NewLabel("method", method)},
 	)

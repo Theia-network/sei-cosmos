@@ -77,7 +77,7 @@ application.
 		},
 	}
 
-	cmd.Flags().String(flags.FlagChainID, "sei-chain", "genesis file chain-id, if left blank will use sei")
+	cmd.Flags().String(flags.FlagChainID, "theia-chain", "genesis file chain-id, if left blank will use theia")
 	cmd.Flags().BoolVar(&removeBlock, "hard", false, "remove last block as well as state")
 	cmd.Flags().String(flags.FlagHome, defaultNodeHome, "The application home directory")
 	return cmd

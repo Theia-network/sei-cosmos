@@ -405,7 +405,7 @@ func (store *Store) dirtyItems(start, end []byte) {
 
 func (store *Store) emitUnsortedCacheSizeMetric() {
 	n := len(store.unsortedCache)
-	telemetry.SetGauge(float32(n), "sei", "cosmos", "unsorted", "cache", "size")
+	telemetry.SetGauge(float32(n), "theia", "cosmos", "unsorted", "cache", "size")
 }
 
 func findStartEndIndex(strL []string, startStr, endStr string) (int, int) {

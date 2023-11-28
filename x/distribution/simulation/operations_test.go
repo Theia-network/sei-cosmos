@@ -146,14 +146,14 @@ func (suite *SimTestSuite) testSimulateMsgWithdrawValidatorCommission(tokenName 
 	distrAcc := suite.app.DistrKeeper.GetDistributionAccount(suite.ctx)
 	suite.Require().NoError(simapp.FundModuleAccount(suite.app.BankKeeper, suite.ctx, distrAcc.GetName(), sdk.NewCoins(
 		sdk.NewCoin(tokenName, sdk.NewInt(10)),
-		sdk.NewCoin("usei", sdk.NewInt(5)),
+		sdk.NewCoin("utheia", sdk.NewInt(5)),
 	)))
 	suite.app.AccountKeeper.SetModuleAccount(suite.ctx, distrAcc)
 
 	// set outstanding rewards
 	valCommission := sdk.NewDecCoins(
 		sdk.NewDecCoinFromDec(tokenName, sdk.NewDec(5).Quo(sdk.NewDec(2))),
-		sdk.NewDecCoinFromDec("usei", sdk.NewDec(1).Quo(sdk.NewDec(1))),
+		sdk.NewDecCoinFromDec("utheia", sdk.NewDec(1).Quo(sdk.NewDec(1))),
 	)
 
 	suite.app.DistrKeeper.SetValidatorOutstandingRewards(suite.ctx, validator0.GetOperator(), types.ValidatorOutstandingRewards{Rewards: valCommission})

@@ -352,35 +352,35 @@ func (s *decCoinTestSuite) TestParseDecCoins() {
 		expectedErr    bool
 	}{
 		{"", nil, false},
-		{"4usei", sdk.DecCoins{sdk.NewDecCoinFromDec("usei", sdk.NewDecFromInt(sdk.NewInt(4)))}, false},
+		{"4usei", sdk.DecCoins{sdk.NewDecCoinFromDec("utheia", sdk.NewDecFromInt(sdk.NewInt(4)))}, false},
 		{"5.5atom,4usei", sdk.DecCoins{
 			sdk.NewDecCoinFromDec("atom", sdk.NewDecWithPrec(5500000000000000000, sdk.Precision)),
-			sdk.NewDecCoinFromDec("usei", sdk.NewDec(4)),
+			sdk.NewDecCoinFromDec("utheia", sdk.NewDec(4)),
 		}, false},
 		{"0.0usei", sdk.DecCoins{}, false}, // remove zero coins
 		{"10.0btc,1.0atom,20.0btc", nil, true},
 		{
 			"0.004usei",
-			sdk.DecCoins{sdk.NewDecCoinFromDec("usei", sdk.NewDecWithPrec(4000000000000000, sdk.Precision))},
+			sdk.DecCoins{sdk.NewDecCoinFromDec("utheia", sdk.NewDecWithPrec(4000000000000000, sdk.Precision))},
 			false,
 		},
 		{
 			"0.004usei",
-			sdk.DecCoins{sdk.NewDecCoinFromDec("usei", sdk.NewDecWithPrec(4000000000000000, sdk.Precision))},
+			sdk.DecCoins{sdk.NewDecCoinFromDec("utheia", sdk.NewDecWithPrec(4000000000000000, sdk.Precision))},
 			false,
 		},
 		{
 			"5.04atom,0.004usei",
 			sdk.DecCoins{
 				sdk.NewDecCoinFromDec("atom", sdk.NewDecWithPrec(5040000000000000000, sdk.Precision)),
-				sdk.NewDecCoinFromDec("usei", sdk.NewDecWithPrec(4000000000000000, sdk.Precision)),
+				sdk.NewDecCoinFromDec("utheia", sdk.NewDecWithPrec(4000000000000000, sdk.Precision)),
 			},
 			false,
 		},
 		{"0.0usei,0.004usei,5.04atom", // remove zero coins
 			sdk.DecCoins{
 				sdk.NewDecCoinFromDec("atom", sdk.NewDecWithPrec(5040000000000000000, sdk.Precision)),
-				sdk.NewDecCoinFromDec("usei", sdk.NewDecWithPrec(4000000000000000, sdk.Precision)),
+				sdk.NewDecCoinFromDec("utheia", sdk.NewDecWithPrec(4000000000000000, sdk.Precision)),
 			},
 			false,
 		},
@@ -406,7 +406,7 @@ func (s *decCoinTestSuite) TestDecCoinsString() {
 		{
 			sdk.DecCoins{
 				sdk.NewDecCoinFromDec("atom", sdk.NewDecWithPrec(5040000000000000000, sdk.Precision)),
-				sdk.NewDecCoinFromDec("usei", sdk.NewDecWithPrec(4000000000000000, sdk.Precision)),
+				sdk.NewDecCoinFromDec("utheia", sdk.NewDecWithPrec(4000000000000000, sdk.Precision)),
 			},
 			"5.040000000000000000atom,0.004000000000000000usei",
 		},

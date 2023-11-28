@@ -103,7 +103,7 @@ func TestInvalidGetMessageDependencies(t *testing.T) {
 	stakingUndelegate := stakingtypes.MsgUndelegate{
 		DelegatorAddress: addrs[0].String(),
 		ValidatorAddress: addrs[1].String(),
-		Amount:           sdk.Coin{Denom: "usei", Amount: sdk.NewInt(10)},
+		Amount:           sdk.Coin{Denom: "utheia", Amount: sdk.NewInt(10)},
 	}
 	undelegateKey := types.GenerateMessageKey(&stakingUndelegate)
 
@@ -1992,7 +1992,7 @@ func TestBuildDependencyDag(t *testing.T) {
 	accounts := simapp.AddTestAddrsIncremental(app, ctx, 2, sdk.NewInt(30000000))
 	// setup test txs
 	msgs := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	txBuilder := simapp.MakeTestEncodingConfig().TxConfig.NewTxBuilder()
@@ -2038,7 +2038,7 @@ func TestBuildDependencyDag_GovPropMessage(t *testing.T) {
 	accounts := simapp.AddTestAddrsIncremental(app, ctx, 2, sdk.NewInt(30000000))
 	govMsg, _ := govtypes.NewMsgSubmitProposal(
 		govtypes.ContentFromProposalType("test2", "test2", govtypes.ProposalTypeText, false),
-		sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1))),
+		sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1))),
 		accounts[0],
 	)
 	// setup test txs
@@ -2088,11 +2088,11 @@ func TestBuildDependencyDag_MultipleTransactions(t *testing.T) {
 	accounts := simapp.AddTestAddrsIncremental(app, ctx, 3, sdk.NewInt(30000000))
 
 	msgs1 := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	msgs2 := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[1], accounts[2], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[1], accounts[2], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	txBuilder := simapp.MakeTestEncodingConfig().TxConfig.NewTxBuilder()
@@ -2147,11 +2147,11 @@ func BencharkAccessOpsBuildDependencyDag(b *testing.B) {
 	accounts := simapp.AddTestAddrsIncremental(app, ctx, 3, sdk.NewInt(30000000))
 
 	msgs1 := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	msgs2 := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[1], accounts[2], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[1], accounts[2], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	txBuilder := simapp.MakeTestEncodingConfig().TxConfig.NewTxBuilder()
@@ -2246,11 +2246,11 @@ func TestInvalidAccessOpsBuildDependencyDag(t *testing.T) {
 	accounts := simapp.AddTestAddrsIncremental(app, ctx, 3, sdk.NewInt(30000000))
 
 	msgs1 := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[0], accounts[1], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	msgs2 := []sdk.Msg{
-		banktypes.NewMsgSend(accounts[1], accounts[2], sdk.NewCoins(sdk.NewCoin("usei", sdk.NewInt(1)))),
+		banktypes.NewMsgSend(accounts[1], accounts[2], sdk.NewCoins(sdk.NewCoin("utheia", sdk.NewInt(1)))),
 	}
 
 	txBuilder := simapp.MakeTestEncodingConfig().TxConfig.NewTxBuilder()
@@ -2361,7 +2361,7 @@ func (suite *KeeperTestSuite) TestMessageDependencies() {
 	bankSendMsg := banktypes.MsgSend{
 		FromAddress: suite.addrs[0].String(),
 		ToAddress:   suite.addrs[1].String(),
-		Amount:      sdk.NewCoins(sdk.Coin{Denom: "usei", Amount: sdk.NewInt(10)}),
+		Amount:      sdk.NewCoins(sdk.Coin{Denom: "utheia", Amount: sdk.NewInt(10)}),
 	}
 	bankMsgKey := types.GenerateMessageKey(&bankSendMsg)
 
@@ -2369,7 +2369,7 @@ func (suite *KeeperTestSuite) TestMessageDependencies() {
 	stakingDelegate := stakingtypes.MsgDelegate{
 		DelegatorAddress: suite.addrs[0].String(),
 		ValidatorAddress: suite.addrs[1].String(),
-		Amount:           sdk.Coin{Denom: "usei", Amount: sdk.NewInt(10)},
+		Amount:           sdk.Coin{Denom: "utheia", Amount: sdk.NewInt(10)},
 	}
 	delegateKey := types.GenerateMessageKey(&stakingDelegate)
 
@@ -2398,7 +2398,7 @@ func (suite *KeeperTestSuite) TestMessageDependencies() {
 	stakingUndelegate := stakingtypes.MsgUndelegate{
 		DelegatorAddress: suite.addrs[0].String(),
 		ValidatorAddress: suite.addrs[1].String(),
-		Amount:           sdk.Coin{Denom: "usei", Amount: sdk.NewInt(10)},
+		Amount:           sdk.Coin{Denom: "utheia", Amount: sdk.NewInt(10)},
 	}
 	undelegateKey := types.GenerateMessageKey(&stakingUndelegate)
 	// setup staking dependency

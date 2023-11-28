@@ -176,7 +176,7 @@ func initRootCmd(rootCmd *cobra.Command, encodingConfig params.EncodingConfig) {
 		// Record information about this application in a Resource.
 		trace.WithResource(resource.NewWithAttributes(
 			"https://opentelemetry.io/schemas/1.9.0",
-			attribute.Key("service.name").String("sei-chain"),
+			attribute.Key("service.name").String("theia-chain"),
 			attribute.String("environment", "production"),
 			attribute.Int64("ID", 1),
 		)),

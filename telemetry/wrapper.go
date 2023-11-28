@@ -83,7 +83,7 @@ func MeasureSinceWithLabels(keys []string, start time.Time, labels []metrics.Lab
 // validator_slashed
 func IncrValidatorSlashedCounter(validator string, slashingType string) {
 	metrics.IncrCounterWithLabels(
-		[]string{"sei", "cosmos", "validator", "slashed"},
+		[]string{"theia", "cosmos", "validator", "slashed"},
 		1,
 		[]metrics.Label{
 			NewLabel("type", slashingType),
@@ -98,7 +98,7 @@ func IncrValidatorSlashedCounter(validator string, slashingType string) {
 //	sei_throughput_<metric_name>
 func MeasureThroughputSinceWithLabels(metricName string, labels []metrics.Label, start time.Time) {
 	metrics.MeasureSinceWithLabels(
-		[]string{"sei", "cosmos", "throughput", metricName},
+		[]string{"theia", "cosmos", "throughput", metricName},
 		start.UTC(),
 		labels,
 	)
